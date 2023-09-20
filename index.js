@@ -20,6 +20,10 @@ app.use(bodyParser.json());
 app.use(cors());
 app.use(limiter);
 
+app.get("/",(req,res) => {
+    res.send("Cookzy - Online")
+})
+
 app.post('/enroll', async (req, res) => {
     const userEmail = req.body.email;
     const emailRegex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
